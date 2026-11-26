@@ -1,0 +1,12 @@
+name: api-shop
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    volumes:
+      - .:/app
+    ports:
+      - '3000:3000'
+      

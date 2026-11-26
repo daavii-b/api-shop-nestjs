@@ -1,0 +1,16 @@
+FROM node:26-alpine
+
+RUN apk add --no-cache openssl
+
+COPY --from=ghcr.io/pnpm/pnpm:12-alpine /opt/pnpm /opt/pnpm
+
+RUN for bin in pnpm pn pnpx pnx; do ln -s "/opt/pnpm/$bin" "/usr/local/bin/$bin"; done
+
+WORKDIR /app
+
+# O usuário "node" (uid 1000) já existe na imagem oficial
+USER node
+
+EXPOSE 3000
+
+CMD ["pnpm", "start:dev"]
