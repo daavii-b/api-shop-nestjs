@@ -6,5 +6,7 @@
     },
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true
-  }
+  },
+  "ts.tsdk": "node_modules/typescript/lib",
+  "ts.preferences.importModuleSpecifierEnding": "js"
 }
