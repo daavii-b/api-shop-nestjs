@@ -1,20 +1,22 @@
 {
   "name": "api-shop",
   "version": "0.0.1",
-  "description": "",
-  "author": "",
+  "description": "Shop's API: Orders and Stock with NestJS, DDD, Clean Architecture and TDD",
+  "author": "Davi Brito <brit.davi122@gmail.com>",
   "private": true,
-  "license": "UNLICENSED",
+  "license": "MIT",
   "type": "module",
   "scripts": {
     "build": "nest build",
-    "deploy": "nest deploy",
-    "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
     "start": "nest start",
     "start:dev": "nest start --watch",
     "start:debug": "nest start --debug --watch",
     "start:prod": "node dist/main",
-    "lint": "oxlint --type-aware src/ test/",
+    "lint": "oxlint --type-aware --deny-warnings src/ test/",
+    "lint:fix": "oxlint --type-aware --fix src/ test/",
+    "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "test:watch": "vitest",
     "test:cov": "vitest run --coverage",
@@ -34,14 +36,17 @@
     "@nestjs/mau": "^0.2.6",
     "@nestjs/schematics": "^12.0.0",
     "@nestjs/testing": "^12.0.1",
-    "@types/node": "^24.0.0",
+    "@types/node": "^26.6.11",
     "@vitest/coverage-v8": "^4.1.2",
     "oxlint": "^1.58.0",
     "oxlint-tsgolint": "^7.0.2001",
     "prettier": "^3.4.2",
     "source-map-support": "^0.5.21",
-    "typescript": "^6.0.2",
+    "typescript": "~6.0.3",
     "vite": "^8.0.0",
     "vitest": "^4.1.2"
+  },
+  "engines": {
+    "node": ">=26"
   }
 }

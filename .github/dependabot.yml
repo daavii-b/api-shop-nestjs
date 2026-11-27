@@ -13,6 +13,10 @@ updates:
         patterns: ['@nestjs/*']
       vitest:
         patterns: ['vitest', '@vitest/*']
+    ignore:
+      # TypeScript 7 ainda não é suportado pela toolchain do Nest (CLI e oxlint)
+      - dependency-name: typescript
+        update-types: ['version-update:semver-major']
 
   - package-ecosystem: github-actions
     directory: /
