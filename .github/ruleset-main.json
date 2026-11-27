@@ -15,7 +15,7 @@
             "type": "deletion"
         },
         {
-            "type": "no_fast_forward"
+            "type": "non_fast_forward"
         },
         {
             "type": "pull_request",
@@ -33,7 +33,7 @@
         {
             "type": "required_status_checks",
             "parameters": {
-                "strict_required_status_check_policy": true,
+                "strict_required_status_checks_policy": true,
                 "required_status_checks": [
                     {
                         "context": "Lint"
@@ -42,7 +42,7 @@
                         "context": "Tests"
                     },
                     {
-                        "context": "Lint"
+                        "context": "Build"
                     },
                     {
                         "context": "Conventional PR title"
