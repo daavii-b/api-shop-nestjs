@@ -1,12 +1,14 @@
 FROM node:26-alpine
 
-RUN apk add --no-cache openssl
+RUN apk add --no-cache git openssh-client openssl \
+    && mkdir -p /home/node/app/node_modules \
+    && chown -R node:node /home/node/app
 
 COPY --from=ghcr.io/pnpm/pnpm:12-alpine /opt/pnpm /opt/pnpm
 
 RUN for bin in pnpm pn pnpx pnx; do ln -s "/opt/pnpm/$bin" "/usr/local/bin/$bin"; done
 
-WORKDIR /app
+WORKDIR /home/node/app
 
 # O usuário "node" (uid 1000) já existe na imagem oficial
 USER node

@@ -1,0 +1,11 @@
+{
+  "name": "API Shop",
+  "dockerComposeFile": "compose.yaml",
+  "service": "app",
+  "workspaceFolder": "/home/node/app",
+  "remoteUser": "node",
+  "shutdownAction": "stopCompose",
+  "forwardPorts": [3000],
+  "postCreateCommand": ["pnpm", "install", "--frozen-lockfile"],
+  "waitFor": "postCreateCommand"
+}

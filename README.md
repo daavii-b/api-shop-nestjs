@@ -31,6 +31,14 @@
 $ pnpm install
 ```
 
+## Desenvolvimento no VS Code
+
+1. Com o Docker em execução, abra o projeto no VS Code com a extensão [Dev Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) instalada.
+2. Na paleta de comandos, selecione **Dev Containers: Reopen in Container**. Na primeira abertura, o VS Code cria o container e instala as dependências com o `pnpm-lock.yaml`.
+3. No terminal integrado, execute `pnpm start:dev` e abra a URL da API na aba **Ports**. O VS Code usa a porta local 3000 quando ela está livre.
+
+Use `pnpm add <pacote>` para adicionar dependências e `pnpm test` para rodar os testes no mesmo terminal. O código e o lockfile são salvos na pasta do projeto, e o Docker guarda o `node_modules` em um volume. Depois de puxar alterações no lockfile, rode `pnpm install --frozen-lockfile`.
+
 ## Compile and run the project
 
 ```bash
