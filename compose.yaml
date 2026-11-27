@@ -2,8 +2,10 @@ name: api-shop
 
 services:
   app:
-    extends:
-      file: compose.base.yaml
-      service: app
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    volumes:
+      - .:/home/node/app
     ports:
       - '3000:3000'
